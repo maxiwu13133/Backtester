@@ -4,32 +4,33 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="backtester.css">
-  <script src=backtester.js defer></script>
+  <link rel="stylesheet" href="styles/backtester.css">
+  <script src="js/backtester.js" defer></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
   <title>Backtester</title>
 </head>
 <body>
   <div class="container">
     <div class="top">
       <div class="reset">
-        <button class="save-button">
+        <button id="save-button">
           Save
         </button>
-        <button class="reset-button">
+        <button id="reset-button">
           Reset
         </button>
       </div>
 
       <div class="points">
         <div class="points-inputs">
-          <input type="number" class="value" value="1000">
-          <input type="number" class="positive" value="3">
-          <input type="number" class="negative" value="2">          
+          <input type="number" id="value" value="1000">
+          <input type="number" id="positive" value="3">
+          <input type="number" id="negative" value="2">          
         </div>
         <div class="points-buttons">
-          <button class="value-button">Set initial</button>
-          <button class="profit-button">+ Add Profit</button>
-          <button class="loss-button">- Add Loss</button>
+          <button id="value-button">Set initial</button>
+          <button id="profit-button">+ Add Profit</button>
+          <button id="loss-button">- Add Loss</button>
         </div>
       </div>
 
@@ -41,18 +42,16 @@
           <p class="stats-label">Wins / Losses</p>
         </div>
         <div class="stats-values">
-          <p class="stats-value">65.38</p>
-          <p class="stats-value" id="stats-value-pnl">&#8593; 37.81%</p>
-          <p class="stats-value">26</p>
-          <p class="stats-value">17W / 9L</p>
+          <p id="winrate" class="stats-value">65.38</p>
+          <p id="pnl" class="stats-value" id="stats-value-pnl">&#8593; 37.81%</p>
+          <p id="trades" class="stats-value">26</p>
+          <p id="wl" class="stats-value">17W / 9L</p>
         </div>
       </div>      
     </div>
 
     <div class="bottom">
-      <canvas class="graph">
-
-      </canvas>      
+      <div id="chart"></div>
     </div>
   </div>
 </body>
