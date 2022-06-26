@@ -61,7 +61,7 @@ button:active {
   align-items: center;
 }
 
-.reset-button {
+#reset-button {
   background-color: #6d7481;
 }
 
@@ -155,10 +155,6 @@ input::-webkit-inner-spin-button {
 .stats-value {
   width: 127.25px;
   text-align: center;
-}
-
-#stats-value-pnl {
-  color: #2a977a;
 }
 
 .bottom {
