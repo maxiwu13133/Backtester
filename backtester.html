@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="backtester.css">
+  <script src=backtester.js defer></script>
+  <title>Backtester</title>
+</head>
+<body>
+  <div class="container">
+    <div class="top">
+      <div class="reset">
+        <button class="save-button">
+          Save
+        </button>
+        <button class="reset-button">
+          Reset
+        </button>
+      </div>
+
+      <div class="points">
+        <div class="points-inputs">
+          <input type="number" class="value" value="1000">
+          <input type="number" class="positive" value="3">
+          <input type="number" class="negative" value="2">          
+        </div>
+        <div class="points-buttons">
+          <button class="value-button">Set initial</button>
+          <button class="profit-button">+ Add Profit</button>
+          <button class="loss-button">- Add Loss</button>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stats-labels">
+          <p class="stats-label">Winrate</p>
+          <p class="stats-label">PnL</p>
+          <p class="stats-label">Total Trades</p>
+          <p class="stats-label">Wins / Losses</p>
+        </div>
+        <div class="stats-values">
+          <p class="stats-value">65.38</p>
+          <p class="stats-value" id="stats-value-pnl">&#8593; 37.81%</p>
+          <p class="stats-value">26</p>
+          <p class="stats-value">17W / 9L</p>
+        </div>
+      </div>      
+    </div>
+
+    <div class="bottom">
+      <canvas class="graph">
+
+      </canvas>      
+    </div>
+  </div>
+</body>
+</html>
