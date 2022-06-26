@@ -8,6 +8,7 @@ let numOfTrades = 0;
 let points = [{x: 0, y: initial}];
 let wins = 0;
 let losses = 0;
+let lowest = initial;
 
 let initialValue = document.getElementById("value");
 let positive = document.getElementById("positive");
@@ -42,6 +43,7 @@ lossButton.addEventListener("click", () => {
   current -= parseInt(negative.value);
   points.push({x: numOfTrades, y: current});
   losses += 1;
+  findMinY();
   updateStats();
   renderChart();
 })
@@ -72,7 +74,7 @@ let renderChart = () => {
     animationEnabled: true,
     backgroundColor: "#202a2e",
     axisY: {
-      minimum: initial,
+      minimum: lowest,
       maximum: findMaxY(points),
       labelFontColor: "#8c9597",
       labelFontFamily: "Montserrat",
@@ -99,15 +101,21 @@ let renderChart = () => {
   chart.render();
 }
 
-let findMaxY = (dataPoints) => {
+let findMaxY = () => {
   max = 0;
-  for (let index = 0; index < dataPoints.length; index++) {
-    const element = dataPoints[index];
+  for (let index = 0; index < points.length; index++) {
+    const element = points[index];
     if(element["y"] > max) {
       max = element["y"];
     }
   }
   return max;
+}
+
+let findMinY = () => {
+  if(current < lowest) {
+    lowest = current;
+  }
 }
 
 let updateStats = () => {
