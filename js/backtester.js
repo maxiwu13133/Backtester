@@ -60,6 +60,10 @@ let resetStats = () => {
   current = initial;
   wins = 0;
   losses = 0;
+  winrate.innerHTML = "00.00";
+  pnl.innerHTML = "0%";
+  trades.innerHTML = 0;
+  wl.innerHTML = "0W / 0L";
   renderChart();
 }
 
